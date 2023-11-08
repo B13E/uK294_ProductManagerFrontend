@@ -1,0 +1,40 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button [matMenuTriggerFor]="mainMenu" class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <!-- Hauptmenü mit Menü 1 und Menü 2 -->
+  <mat-menu #mainMenu="matMenu">
+    <button mat-menu-item>Menü 1</button>
+    <button mat-menu-item>Menü 2</button>
+    <!-- Weitere Menüeinträge können hier hinzugefügt werden -->
+  </mat-menu>
+
+  <span>Gemstone Galleria</span>
+  <span class="example-spacer"></span>
+
+  <!-- Dropdown-Menü für Kategorien -->
+  <button mat-button [matMenuTriggerFor]="categoriesMenu">
+    Kategorie
+  </button>
+  <mat-menu #categoriesMenu="matMenu">
+    <button mat-menu-item routerLink="/path-to-category1">Kategorie 1</button>
+    <button mat-menu-item routerLink="/path-to-category2">Kategorie 2</button>
+    <!-- Weitere Menüeinträge können hier hinzugefügt werden -->
+  </mat-menu>
+
+  <!-- Dropdown-Menü für Produkte -->
+  <button mat-button [matMenuTriggerFor]="productsMenu">
+    Produkte
+  </button>
+  <mat-menu #productsMenu="matMenu">
+    <button mat-menu-item>Produkte 1</button>
+    <button mat-menu-item>Produkte 2</button>
+    <button mat-menu-item>Produkte 3</button>
+    <!-- Weitere Menüeinträge können hier hinzugefügt werden -->
+  </mat-menu>
+
+  <!-- Login und Registrieren Buttons -->
+  <button mat-button routerLink="/login">Login</button>
+  <button mat-button routerLink="/register">Registrieren</button>
+</mat-toolbar>

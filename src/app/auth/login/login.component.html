@@ -1,0 +1,19 @@
+<p>Login works!</p>
+<form [formGroup]="loginForm" (ngSubmit)="logForm()">
+  <!-- Add your login form fields here, for example: -->
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email">
+  </mat-form-field>
+  <!-- In Ihrer LoginComponent Template -->
+
+  <mat-form-field appearance="fill">
+    <mat-label>Password</mat-label>
+    <input matInput type="password" formControlName="password">
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit">Login</button>
+</form>
+
+<button mat-button mat-raised-button color="accent" routerLink="/register">Registrieren</button>
+

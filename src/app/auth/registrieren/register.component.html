@@ -1,0 +1,83 @@
+<p>register works!</p>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Registrieren</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+
+      <!-- Vorname -->
+      <mat-form-field appearance="fill">
+        <mat-label>Vorname</mat-label>
+        <input matInput formControlName="firstName" required>
+      </mat-form-field>
+
+      <!-- Nachname -->
+      <mat-form-field appearance="fill">
+        <mat-label>Nachname</mat-label>
+        <input matInput formControlName="lastName" required>
+
+      </mat-form-field>
+
+      <!-- Straße -->
+      <mat-form-field appearance="fill">
+        <mat-label>Strasse</mat-label>
+        <input matInput formControlName="street" required>
+
+      </mat-form-field>
+
+      <!-- Postleitzahl -->
+      <mat-form-field appearance="fill">
+        <mat-label>PLZ</mat-label>
+        <input matInput formControlName="zip" required>
+
+      </mat-form-field>
+
+      <!-- Stadt -->
+      <mat-form-field appearance="fill">
+        <mat-label>Stadt</mat-label>
+        <input matInput formControlName="city" required>
+
+      </mat-form-field>
+
+      <!-- Land -->
+      <mat-form-field appearance="fill">
+        <mat-label>Land</mat-label>
+        <input matInput formControlName="country" required>
+
+      </mat-form-field>
+
+      <!-- Telefon -->
+      <mat-form-field appearance="fill">
+        <mat-label>Telefon</mat-label>
+        <input matInput formControlName="phone">
+
+      </mat-form-field>
+
+      <!-- Mobiltelefon -->
+      <mat-form-field appearance="fill">
+        <mat-label>Mobiltelefon</mat-label>
+        <input matInput formControlName="mobilePhone">
+
+      </mat-form-field>
+
+      <!-- E-Mail -->
+      <mat-form-field appearance="fill">
+        <mat-label>E-Mail</mat-label>
+        <input matInput formControlName="email" required>
+
+      </mat-form-field>
+
+      <!-- Passwort -->
+      <mat-form-field appearance="fill">
+        <mat-label>Passwort</mat-label>
+        <input matInput formControlName="password" required type="password">
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit" [disabled]="registerForm.invalid"> Registrieren </button>
+
+    </mat-card-content>
+
+  </mat-card>
+</form>
+
