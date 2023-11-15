@@ -4,9 +4,8 @@
   align-items: center;
   font-size: 24px;
   font-weight: bold;
+  margin-top: 10px;
 }
-
-
 
 .container {
   display: flex;
@@ -14,14 +13,10 @@
   align-items: center;
 }
 
-
-
 .example-form {
   display: flex;
   flex-direction: column;
 }
-
-
 
 .button-row {
   display: flex;

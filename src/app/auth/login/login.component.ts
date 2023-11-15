@@ -27,9 +27,8 @@ export class LoginComponent implements OnInit {
     password: new FormControl('', Validators.required)
   });
 
-  ngOnInit(): void {
-
-  }
+   ngOnInit(): void {
+   }
 
   logForm(): void {
     if (this.loginForm.valid) {
@@ -47,15 +46,3 @@ export class LoginComponent implements OnInit {
   }
 }
 
-/*
-this.userControllerService.login({
-}).subscribe(response => {
-  localStorage.setItem('ACCESS_TOKEN', val.token as a string);
-  localstorage remouve ACCES Token
-  // Weiterleitung https://product-manager.cyrotech.ch/
-  // https://product-manager.cyrotech.ch/swagger-ui/index.html#/
-});
-
-// Tokenwrapper
-export tokenwrapper
- */

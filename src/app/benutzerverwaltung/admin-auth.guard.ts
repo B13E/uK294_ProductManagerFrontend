@@ -1,11 +1,9 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
 
-// Importieren Sie Ihren AuthGuard
-
 class AuthService {
   isAdmin() {
-    return true;
+   return true;
   }
 }
 
@@ -21,10 +19,9 @@ export class AdminAuthGuard implements CanActivate {
     state: RouterStateSnapshot
   ): boolean {
     if (this.authService.isAdmin()) {
-      return true; // Erlauben Sie den Zugriff für Administratoren
+      return true;
     } else {
-      // Redirect oder andere Maßnahmen für nicht autorisierte Benutzer
-      this.router.navigate(['/login']); // Sie können dies anpassen
+      this.router.navigate(['/login']);
       return false;
     }
   }

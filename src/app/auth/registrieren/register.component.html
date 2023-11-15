@@ -1,6 +1,9 @@
 <div class="Titel">
   <p>Registrieren</p>
 </div>
+
+
+
 <div class="container">
   <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
     <mat-card>
@@ -79,8 +82,8 @@
 
         <!--AGB und Datenschutz-->
         <div class="row">
-          <mat-checkbox formControlName="agbAcceptance" class="col">
-            AGB und Datenschutz Akzeptieren
+          <mat-checkbox class="col">
+            AGB und Datenschutzerklärung Akzeptieren
           </mat-checkbox>
         </div>
 

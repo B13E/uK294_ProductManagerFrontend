@@ -15,9 +15,10 @@ import { KategorieErstellenComponent } from './kategorieverwaltung/kategorieerst
 import { KategorieBearbeitenComponent } from './kategorieverwaltung/kategoriebearbeiten/kategorie-bearbeiten.component';
 import { KategorieEntfernenComponent } from './kategorieverwaltung/kategorieentfernen/kategorie-entfernen.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import {KategorielisteComponent} from "./kategorie/kategorieliste/kategorieliste.component";
+import { KategorielisteComponent } from "./kategorie/kategorieliste/kategorieliste.component";
 import { AdminAuthGuard } from './benutzerverwaltung/admin-auth.guard';
-import {AdminComponent} from "./benutzerverwaltung/admin/admin.component";
+import { AdminComponent } from "./benutzerverwaltung/admin/admin.component";
+import {BenutzerComponent} from "./benutzerverwaltung/benutzer/benutzer.component";
 
 const routes: Routes = [
   { path: '', redirectTo: 'startseite', pathMatch: 'full' },
@@ -47,7 +48,8 @@ const routes: Routes = [
       { path: 'produktentfernen', component: ProduktEntfernenComponent },
       { path: 'kategorieerstellen', component: KategorieErstellenComponent },
       { path: 'kategoriebearbeiten', component: KategorieBearbeitenComponent },
-      { path: 'kategorieentfernen', component: KategorieEntfernenComponent }
+      { path: 'kategorieentfernen', component: KategorieEntfernenComponent },
+      { path: 'benutzer', component: BenutzerComponent },
     ]
   },
 

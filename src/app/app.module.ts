@@ -18,6 +18,7 @@ import { AuthorizationInterceptor } from './interceptors/interceptor-jwt.interce
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {ApiModule, Configuration} from "./openapi-client";
 import {AdminComponent} from "./benutzerverwaltung/admin/admin.component";
+import {ToastrModule} from "ngx-toastr";
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import {AdminComponent} from "./benutzerverwaltung/admin/admin.component";
     RouterModule,
     FooterComponent,
     HeaderComponent,
-      HttpClientModule,
+    ToastrModule.forRoot(),
+    HttpClientModule,
     ApiModule.forRoot(() => {
       return new Configuration({
         basePath: 'https://product-manager.cyrotech.ch'

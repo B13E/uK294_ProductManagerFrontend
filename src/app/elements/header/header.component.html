@@ -24,6 +24,7 @@
 
   <!--Produkte-->
   <button *pmShowAsAdmin (click)="onpageshow" mat-button [matMenuTriggerFor]="productsMenu">Produkte</button>
+
   <mat-menu #productsMenu="matMenu">
     <button mat-menu-item routerLink="/admin/produkterstellen">Produkt erstellen</button>
     <button mat-menu-item routerLink="/admin/produktbearbeiten">Produkt bearbeiten</button>
@@ -31,9 +32,10 @@
   </mat-menu>
 
   <!--Login und Registrieren-->
-  <button mat-button routerLink="/auth/login">Login</button>
+  <!-- Login Button zu Logout ändern-->
+  <button mat-button routerLink="/auth/login">Login/Logout</button>
   <button mat-button routerLink="/auth/register">Registrieren</button>
 
-  <!--Logout-->
-  <button mat-button routerLink="/auth/login">Logout</button>
+  <!--Logout
+  <button class="logout" mat-button routerLink="/auth/login">Logout</button>-->
 </mat-toolbar>

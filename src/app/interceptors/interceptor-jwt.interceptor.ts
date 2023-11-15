@@ -3,16 +3,6 @@ import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor } from '@angular/c
 import { Observable } from 'rxjs';
 
 @Injectable()
-export class InterceptorJwtInterceptor implements HttpInterceptor {
-
-  constructor() {}
-
-  intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    return next.handle(request);
-  }
-}
-
-@Injectable()
 export class AuthorizationInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     const accessToken = localStorage.getItem("ACCESS_TOKEN");
@@ -26,4 +16,7 @@ export class AuthorizationInterceptor implements HttpInterceptor {
     }
     return next.handle(request);
   }
+}
+
+export class InterceptorJwtInterceptor {
 }
