@@ -23,4 +23,14 @@ import { RouterLink } from "@angular/router";
 export class HeaderComponent {
 
   protected readonly onpageshow = onpageshow;
+  private router: any;
+
+  isLoggedIn(): boolean {
+    return localStorage.getItem('ACCESS_TOKEN') !== null;
+  }
+
+  logout(): void {
+    localStorage.removeItem('ACCESS_TOKEN');
+    this.router.navigateByUrl('/auth/login');
+  }
 }

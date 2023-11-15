@@ -31,11 +31,12 @@
     <button mat-menu-item routerLink="/admin/produktentfernen">Produkt entfernen</button>
   </mat-menu>
 
-  <!--Login und Registrieren-->
-  <!-- Login Button zu Logout ändern-->
-  <button mat-button routerLink="/auth/login">Login/Logout</button>
-  <button mat-button routerLink="/auth/register">Registrieren</button>
+  <!-- Login/Logout Button -->
+  <button mat-button *ngIf="!isLoggedIn()" routerLink="/auth/login">Login</button>
+  <button mat-button *ngIf="isLoggedIn()" (click)="logout()">Logout</button>
 
-  <!--Logout
-  <button class="logout" mat-button routerLink="/auth/login">Logout</button>-->
+  <!-- Registrieren Button -->
+  <button mat-button *ngIf="!isLoggedIn()" routerLink="/auth/register">Registrieren</button>
+
+
 </mat-toolbar>

@@ -7,17 +7,16 @@ mat-toolbar {
 }
 
 .text-button {
-  color: inherit; /* Erbt die Textfarbe von der Toolbar */
-  background-color: transparent; /* Kein Hintergrund */
-  box-shadow: none; /* Kein Schatten */
-  border: none; /* Keine Grenze */
+  color: inherit;
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
 }
 
-/* Entfernt die Standard-Material-Design-Welleneffekte */
 .text-button.mat-button-focus-overlay {
   display: none;
 }
 
 .text-button:hover {
-  background-color: rgba(0, 0, 0, 0.04); /* Optional: leichter Hintergrund bei Hover */
+  background-color: rgba(0, 0, 0, 0.04);
 }
