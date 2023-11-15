@@ -15,7 +15,9 @@ import { KategorieErstellenComponent } from './kategorieverwaltung/kategorieerst
 import { KategorieBearbeitenComponent } from './kategorieverwaltung/kategoriebearbeiten/kategorie-bearbeiten.component';
 import { KategorieEntfernenComponent } from './kategorieverwaltung/kategorieentfernen/kategorie-entfernen.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-
+import {KategorielisteComponent} from "./kategorie/kategorieliste/kategorieliste.component";
+import { AdminAuthGuard } from './benutzerverwaltung/admin-auth.guard';
+import {AdminComponent} from "./benutzerverwaltung/admin/admin.component";
 
 const routes: Routes = [
   { path: '', redirectTo: 'startseite', pathMatch: 'full' },
@@ -36,22 +38,25 @@ const routes: Routes = [
     ],
   },
   {
-    path: 'admin', // canActivate: [AuthGard]
+    path: 'admin',
+    canActivate: [AdminAuthGuard],
+    component: AdminComponent,
     children: [
-      { path: 'produkt/erstellen', component: ProduktErstellenComponent },
-      { path: 'produkt/bearbeiten', component: ProduktBearbeitenComponent },
-      { path: 'produkt/entfernen', component: ProduktEntfernenComponent },
-      { path: 'kategorie/erstellen', component: KategorieErstellenComponent },
-      { path: 'kategorie/bearbeiten', component: KategorieBearbeitenComponent },
-      { path: 'kategorie/entfernen', component: KategorieEntfernenComponent }
-    ],
+      { path: 'produkterstellen', component: ProduktErstellenComponent },
+      { path: 'produktbearbeiten', component: ProduktBearbeitenComponent },
+      { path: 'produktentfernen', component: ProduktEntfernenComponent },
+      { path: 'kategorieerstellen', component: KategorieErstellenComponent },
+      { path: 'kategoriebearbeiten', component: KategorieBearbeitenComponent },
+      { path: 'kategorieentfernen', component: KategorieEntfernenComponent }
+    ]
   },
-  // Here you might want to add routes for product and category list/details if needed
-  { path: 'produkte', component: ProduktlisteComponent },
-  { path: 'kategorien/:id', component: KategoriedetailsComponent },
-  { path: 'produkte/:id', component: ProduktdetailsComponent },
 
-  // Handling 404: Page Not Found
+  { path: 'kategoriedetails', component: KategoriedetailsComponent },
+  { path: 'kategorieliste', component: KategorielisteComponent },
+  { path: 'produktdetails', component: ProduktdetailsComponent },
+  { path: 'produktliste', component: ProduktlisteComponent },
+
+  // Error Handling
   { path: '**', component: NotFoundComponent }
 ];
 

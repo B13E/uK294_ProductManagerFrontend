@@ -28,22 +28,20 @@ export class LoginComponent implements OnInit {
   });
 
   ngOnInit(): void {
-    //
+
   }
 
   logForm(): void {
     if (this.loginForm.valid) {
       console.log(this.loginForm.value);
-      // Handle the form submission logic here
       this.userService.login(this.loginForm.value as LoginRequestDto).subscribe(val => {
         localStorage.setItem('ACCESS_TOKEN', val.token as string);
         alert('erfolgreich eingeloggt')
-        //this.router.navigateByUrl('/products/overview')
+        this.router.navigateByUrl('/startseite')
       })
     }
   }
 
-  // Ensure the method to register is correctly named and implemented if needed
   register() {
 
   }
@@ -51,7 +49,6 @@ export class LoginComponent implements OnInit {
 
 /*
 this.userControllerService.login({
-  // Ihre Login-Daten
 }).subscribe(response => {
   localStorage.setItem('ACCESS_TOKEN', val.token as a string);
   localstorage remouve ACCES Token
@@ -59,8 +56,6 @@ this.userControllerService.login({
   // https://product-manager.cyrotech.ch/swagger-ui/index.html#/
 });
 
-
 // Tokenwrapper
 export tokenwrapper
-
  */

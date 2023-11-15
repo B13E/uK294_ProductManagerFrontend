@@ -17,14 +17,15 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { AuthorizationInterceptor } from './interceptors/interceptor-jwt.interceptor';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {ApiModule, Configuration} from "./openapi-client";
+import {AdminComponent} from "./benutzerverwaltung/admin/admin.component";
 
 @NgModule({
   declarations: [
-
-
     StartseiteComponent,
     NotFoundComponent,
-    AppComponent
+    AppComponent,
+    AdminComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +46,6 @@ import {ApiModule, Configuration} from "./openapi-client";
       })
     }),
 
-    // Ensure RouterModule is imported
   ],
   providers: [
   {

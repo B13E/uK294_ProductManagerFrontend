@@ -1,5 +1,4 @@
 import { TestBed } from '@angular/core/testing';
-
 import { InterceptorJwtInterceptor } from './interceptor-jwt.interceptor';
 
 describe('InterceptorNameInterceptor', () => {

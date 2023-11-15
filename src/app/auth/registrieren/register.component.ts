@@ -9,6 +9,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import {RegisterDto, UserControllerService} from "../../openapi-client";
+import {MatCheckboxModule} from "@angular/material/checkbox";
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'pm-registrieren',
@@ -24,8 +27,8 @@ import {RegisterDto, UserControllerService} from "../../openapi-client";
     MatInputModule,
     MatCardModule,
     MatInputModule,
-    MatButtonModule,
-    ],
+    MatButtonModule, MatCheckboxModule,
+  ],
   standalone: true
 })
 export class RegisterComponent implements OnInit {
@@ -36,8 +39,8 @@ export class RegisterComponent implements OnInit {
   // Testanmeldung Registrierung 1 DB und nur ein Benutzer möglich
 
 // Für Formular aus swagger kopieren
-  private router: any;
-  constructor(private fb: FormBuilder, private userService: UserControllerService) { // FormBuilder - Methode Group für Controlls
+//  private router: any;
+  constructor(private fb: FormBuilder, private userService: UserControllerService, private router: Router) { // FormBuilder - Methode Group für Controlls
     this.registerForm = this.fb.group({
       //namen aus api verwenden
       // anrede: ['', Validators.required],
@@ -63,12 +66,6 @@ export class RegisterComponent implements OnInit {
     setInterval(() => {
       console.log(this.registerForm);
     }, 1500);
-    /*this.registerForm = new FormGroup({
-      salutation: new FormControl('', [Validators.required]),
-      firstName: new FormControl('', [Validators.required]),
-      lastName: new FormControl('', [Validators.required]),
-      terms: new FormControl(false, [Validators.requiredTrue])
-    });*/
   }
 
   logForm() {
@@ -77,20 +74,17 @@ export class RegisterComponent implements OnInit {
   onSubmit(): void {
     if (this.registerForm.valid) {
       this.userService.register(this.registerForm.value as RegisterDto).subscribe(val => {
-        alert('erfolgreich registriert');
-        this.router.navigateByUrl('/login') //-> Navigieren auf Login
+        alert("erfolgreich registriert");
+        this.router.navigateByUrl('/auth/login'); //-> Navigieren auf http://localhost:4200/auth/login
       });
     }
   }
+}
 /*
   onRegister() {
     if (this.registerForm.valid) {
       // https://product-manager.cyrotech.ch/});
       console.log(this.registerForm.value);
     }
-
-
   }
 */
-}
-

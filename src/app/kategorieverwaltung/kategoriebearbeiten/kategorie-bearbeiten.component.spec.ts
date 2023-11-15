@@ -1,6 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { KategorieBearbeitenComponent } from './kategorie-bearbeiten.component';
+import { KategorieBearbeitenComponent } from "./kategorie-bearbeiten.component";
 
 describe('KategorieBearbeitenComponent', () => {
   let component: KategorieBearbeitenComponent;

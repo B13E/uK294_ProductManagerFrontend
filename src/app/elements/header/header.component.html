@@ -3,38 +3,37 @@
     <mat-icon>menu</mat-icon>
   </button>
 
-  <!-- Hauptmenü mit Menü 1 und Menü 2 -->
+  <!--Menü-->
   <mat-menu #mainMenu="matMenu">
-    <button mat-menu-item>Menü 1</button>
-    <button mat-menu-item>Menü 2</button>
-    <!-- Weitere Menüeinträge können hier hinzugefügt werden -->
+    <button mat-menu-item routerLink="/kategoriedetails">Kategoriedetails</button>
+    <button mat-menu-item routerLink="/kategorieliste">Kategorieliste</button>
+    <button mat-menu-item routerLink="/produktdetails">Produktdetails</button>
+    <button mat-menu-item routerLink="/produktliste">Produktliste</button>
   </mat-menu>
 
-  <span>Gemstone Galleria</span>
+  <span>Product Manager Frontend</span>
   <span class="example-spacer"></span>
 
-  <!-- Dropdown-Menü für Kategorien -->
-  <button mat-button [matMenuTriggerFor]="categoriesMenu">
-    Kategorie
-  </button>
+  <!--Kategorien-->
+  <button *pmShowAsAdmin (click)="onpageshow" mat-button [matMenuTriggerFor]="categoriesMenu">Kategorie</button>
   <mat-menu #categoriesMenu="matMenu">
-    <button mat-menu-item routerLink="/path-to-category1">Kategorie 1</button>
-    <button mat-menu-item routerLink="/path-to-category2">Kategorie 2</button>
-    <!-- Weitere Menüeinträge können hier hinzugefügt werden -->
+    <button mat-menu-item routerLink="/admin/kategorieerstellen">Kategorie erstellen</button>
+    <button mat-menu-item routerLink="/admin/kategoriebearbeiten">Kategorie bearbeiten</button>
+    <button mat-menu-item routerLink="/admin/kategorieentfernen">Kategorie entfernen</button>
   </mat-menu>
 
-  <!-- Dropdown-Menü für Produkte -->
-  <button mat-button [matMenuTriggerFor]="productsMenu">
-    Produkte
-  </button>
+  <!--Produkte-->
+  <button *pmShowAsAdmin (click)="onpageshow" mat-button [matMenuTriggerFor]="productsMenu">Produkte</button>
   <mat-menu #productsMenu="matMenu">
-    <button mat-menu-item>Produkte 1</button>
-    <button mat-menu-item>Produkte 2</button>
-    <button mat-menu-item>Produkte 3</button>
-    <!-- Weitere Menüeinträge können hier hinzugefügt werden -->
+    <button mat-menu-item routerLink="/admin/produkterstellen">Produkt erstellen</button>
+    <button mat-menu-item routerLink="/admin/produktbearbeiten">Produkt bearbeiten</button>
+    <button mat-menu-item routerLink="/admin/produktentfernen">Produkt entfernen</button>
   </mat-menu>
 
-  <!-- Login und Registrieren Buttons -->
-  <button mat-button routerLink="/login">Login</button>
-  <button mat-button routerLink="/register">Registrieren</button>
+  <!--Login und Registrieren-->
+  <button mat-button routerLink="/auth/login">Login</button>
+  <button mat-button routerLink="/auth/register">Registrieren</button>
+
+  <!--Logout-->
+  <button mat-button routerLink="/auth/login">Logout</button>
 </mat-toolbar>
