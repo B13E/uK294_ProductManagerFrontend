@@ -1,6 +1,36 @@
-<p>kategorieliste works</p>
+<div class="legal-document">
+  <h1>Unsere Produktkategorien</h1>
 
-<p>Kategorie 1</p>
-<p>Kategorie 2</p>
-<p>Kategorie 3</p>
+  <h3 (click)="toggleDropdown('smartphones')">Kategorie 1: Smartphones</h3>
+  <div *ngIf="showSmartphones" class="product-container">
+    <div *ngFor="let product of smartphones" class="product">
+      <img [src]="product.imageUrl" alt="{{ product.name }}">
+      <div class="product-details">
+        <h4>{{ product.name }}</h4>
+        <p>Preis: {{ product.price }}</p>
+      </div>
+    </div>
+  </div>
 
+  <h3 (click)="toggleDropdown('laptops')">Kategorie 2: Laptops</h3>
+  <div *ngIf="showLaptops" class="product-container">
+    <div *ngFor="let product of laptops" class="product">
+      <img [src]="product.imageUrl" alt="{{ product.name }}">
+      <div class="product-details">
+        <h4>{{ product.name }}</h4>
+        <p>Preis: {{ product.price }}</p>
+      </div>
+    </div>
+  </div>
+
+  <h3 (click)="toggleDropdown('computers')">Kategorie 3: Computer</h3>
+  <div *ngIf="showComputers" class="product-container">
+    <div *ngFor="let product of computers" class="product">
+      <img [src]="product.imageUrl" alt="{{ product.name }}">
+      <div class="product-details">
+        <h4>{{ product.name }}</h4>
+        <p>Preis: {{ product.price }}</p>
+      </div>
+    </div>
+  </div>
+</div>

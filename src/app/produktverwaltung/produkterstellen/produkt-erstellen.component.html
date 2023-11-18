@@ -1,13 +1,64 @@
-<p>produkt-erstellen works!</p>
+<div class="container">
+  <form>
+    <mat-card>
 
-<p>ProductUpdateDto
-  sku*	[...]
-  active*	[...]
-  name*	[...]
-  image*	[...]
-  description*	[...]
-  price*	[...]
-  stock*	[...]
-  categoryId	[...]
-  </p>
+      <mat-card-content>
 
+        <div class="row">
+          <mat-form-field class="col">
+            <mat-label>SKU*</mat-label>
+            <input matInput formControlName="sku" required>
+          </mat-form-field>
+          <mat-form-field class="col">
+            <mat-label>Aktivität (true/false)*</mat-label>
+            <input matInput formControlName="active" required>
+          </mat-form-field>
+        </div>
+
+        <div class="row">
+          <mat-form-field class="col">
+            <mat-label>Name*</mat-label>
+            <input matInput formControlName="name" required>
+          </mat-form-field>
+        </div>
+
+        <div class="row">
+          <mat-form-field class="col">
+            <mat-label>Bild*</mat-label>
+            <input matInput formControlName="image" required>
+          </mat-form-field>
+        </div>
+
+        <div class="row">
+          <mat-form-field class="col">
+            <mat-label>Beschreibung*</mat-label>
+            <input matInput formControlName="description" required>
+          </mat-form-field>
+        </div>
+
+        <div class="row">
+          <mat-form-field class="col">
+            <mat-label>Preis*</mat-label>
+            <input matInput formControlName="price" required>
+          </mat-form-field>
+          <mat-form-field class="col">
+            <mat-label>Bestand*</mat-label>
+            <input matInput formControlName="stock" required>
+          </mat-form-field>
+        </div>
+
+        <div class="row">
+          <mat-form-field class="col">
+            <mat-label>Kategorie-ID</mat-label>
+            <input matInput formControlName="categoryId">
+          </mat-form-field>
+        </div>
+
+        <div class="row">
+          <button mat-raised-button color="primary" type="submit">Erstellen</button>
+        </div>
+
+      </mat-card-content>
+    </mat-card>
+  </form>
+</div>

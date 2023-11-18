@@ -1,17 +1,25 @@
-<p>kategorie-erstellen works!</p>
+<div class="Titel">
+  <p>Kategorie erstellen</p>
+</div>
 
-<p>CategoryShowDto
-  id*	[...]
-  name*	[...]
-  </p>
-
-<!--
-<mat-form-field>
-  <mat-label>Input</mat-label>
-  <input matInput>
-</mat-form-field>
-<mat-form-field>
-  <mat-label>Textarea</mat-label>
-  <textarea matInput></textarea>
-</mat-form-field>
--->
+<div class="container">
+  <mat-card>
+    <mat-card-content>
+      <div class="row">
+        <mat-form-field class="col">
+          <mat-label>ID</mat-label>
+          <input matInput formControlName="id" required>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field class="col">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name" required>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <button mat-raised-button color="primary" type="submit">Speichern</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

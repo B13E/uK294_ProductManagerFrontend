@@ -44,18 +44,19 @@ export class RegisterComponent implements OnInit {
     this.registerForm = this.fb.group({
       //namen aus api verwenden
       // anrede: ['', Validators.required],
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      street: ['', Validators.required],
-      zip: ['', Validators.required],
-      // plz: ['', Validators.required],
-      city: ['', Validators.required],
+      firstName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(255)]],
+      lastName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(255)]],
+      street: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(255)]],
+      zip: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(10)]],
+      city: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(255)]],
       country: ['', Validators.required],
-      phone: [''],
-      mobilePhone: [''],
-     // kanton: ['', Validators.required],
+      phone: ['', Validators.maxLength(15)],
+      mobilePhone: ['', Validators.maxLength(15)],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
+      password: ['', [
+        Validators.required,
+        Validators.minLength(8),
+        Validators.pattern('^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$')]],
       confirmPassword: [''],
     //  agb: [false, Validators.requiredTrue],
     //  newsletter: [false]
@@ -79,6 +80,27 @@ export class RegisterComponent implements OnInit {
       });
     }
   }
+
+  // In RegisterComponent.ts
+  getErrorMessage(field: string): string {
+    const control = this.registerForm.get(field);
+
+    if (control && control.errors) {
+      if (control.hasError('required')) {
+        return 'Dieses Feld ist erforderlich.';
+      } else if (control.hasError('minlength')) {
+        return `Mindestens ${control.getError('minlength')?.requiredLength} Zeichen erforderlich.`;
+      } else if (control.hasError('maxlength')) {
+        return `Maximal ${control.getError('maxlength')?.requiredLength} Zeichen erlaubt.`;
+      } else if (control.hasError('email')) {
+        return 'Bitte geben Sie eine gültige E-Mail-Adresse ein.';
+      } else if (control.hasError('pattern')) {
+        return 'Die Eingabe entspricht nicht dem erforderlichen Format.';
+      }
+    }
+    return '';
+  }
+
 }
 /*
   onRegister() {

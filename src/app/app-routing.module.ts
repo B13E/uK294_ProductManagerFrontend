@@ -6,6 +6,7 @@ import { StartseiteComponent } from './startseite/startseite.component';
 import { DatenschutzComponent } from './elements/footer/datenschutz/datenschutz.component';
 import { ImpressumComponent } from './elements/footer/impressum/impressum.component';
 import { KategoriedetailsComponent } from './kategorie/kategoriedetails/kategoriedetails.component';
+import { KategorielisteComponent } from './kategorie/kategorieliste/kategorieliste.component';
 import { ProduktdetailsComponent } from './produkte/produktdetails/produktdetails.component';
 import { ProduktlisteComponent } from './produkte/produktliste/produktliste.component';
 import { ProduktErstellenComponent } from './produktverwaltung/produkterstellen/produkt-erstellen.component';
@@ -15,7 +16,6 @@ import { KategorieErstellenComponent } from './kategorieverwaltung/kategorieerst
 import { KategorieBearbeitenComponent } from './kategorieverwaltung/kategoriebearbeiten/kategorie-bearbeiten.component';
 import { KategorieEntfernenComponent } from './kategorieverwaltung/kategorieentfernen/kategorie-entfernen.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { KategorielisteComponent } from "./kategorie/kategorieliste/kategorieliste.component";
 import { AdminAuthGuard } from './benutzerverwaltung/admin-auth.guard';
 import { AdminComponent } from "./benutzerverwaltung/admin/admin.component";
 import {BenutzerComponent} from "./benutzerverwaltung/benutzer/benutzer.component";

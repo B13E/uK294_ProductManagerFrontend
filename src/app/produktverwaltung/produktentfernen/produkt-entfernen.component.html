@@ -1,5 +1,23 @@
-<p>produkt-entfernen works!</p>
+<div class="container">
+    <form>
+        <mat-card>
 
-<p>Produkt/id</p>
+            <mat-card-content>
 
-<p>Delete Ja/Nein</p>
+                <div class="row">
+                    <mat-form-field class="col">
+                        <mat-label>ID</mat-label>
+                        <input matInput formControlName="id" required>
+                    </mat-form-field>
+                </div>
+                <div class="row">
+                    <p>Wollen Sie das Produkt wirklich löschen?</p>
+                </div>
+                <div class="row">
+                    <button mat-raised-button color="primary" type="submit">Entfernen</button>
+                </div>
+
+            </mat-card-content>
+        </mat-card>
+    </form>
+</div>

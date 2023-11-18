@@ -5,6 +5,14 @@ import { Component } from '@angular/core';
   templateUrl: './kategoriedetails.component.html',
   styleUrls: ['./kategoriedetails.component.scss']
 })
-export class KategoriedetailsComponent {
 
+export class KategoriedetailsComponent {
+  kategorieText: string = '';
+
+  bearbeiteBeschreibung(): void {
+  }
+
+  loescheBeschreibung(): void {
+    this.kategorieText = '';
+  }
 }

@@ -16,6 +16,7 @@
 
   <!--Kategorien-->
   <button *pmShowAsAdmin (click)="onpageshow" mat-button [matMenuTriggerFor]="categoriesMenu">Kategorie</button>
+
   <mat-menu #categoriesMenu="matMenu">
     <button mat-menu-item routerLink="/admin/kategorieerstellen">Kategorie erstellen</button>
     <button mat-menu-item routerLink="/admin/kategoriebearbeiten">Kategorie bearbeiten</button>

@@ -1,5 +1,32 @@
-<p>produktliste works!</p>
+<h2>Smartphones</h2>
+<div class="product-container">
+  <div class="product" *ngFor="let product of smartphones">
+    <img [src]="product.imageUrl" alt="{{ product.name }}">
+    <div class="product-details">
+      <h3>{{ product.name }}</h3>
+      <p>Preis: {{ product.price }}</p>
+    </div>
+  </div>
+</div>
 
-<p>Produkt 1</p>
-<p>Produkt 2</p>
-<p>Produkt 3</p>
+<h2>Laptops</h2>
+<div class="product-container">
+  <div class="product" *ngFor="let product of laptops">
+    <img [src]="product.imageUrl" alt="{{ product.name }}">
+    <div class="product-details">
+      <h3>{{ product.name }}</h3>
+      <p>Preis: {{ product.price }}</p>
+    </div>
+  </div>
+</div>
+
+<h2>Computer</h2>
+<div class="product-container">
+  <div class="product" *ngFor="let product of computers">
+    <img [src]="product.imageUrl" alt="{{ product.name }}">
+    <div class="product-details">
+      <h3>{{ product.name }}</h3>
+      <p>Preis: {{ product.price }}</p>
+    </div>
+  </div>
+</div>

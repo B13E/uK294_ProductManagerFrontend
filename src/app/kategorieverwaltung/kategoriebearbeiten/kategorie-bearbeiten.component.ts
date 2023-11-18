@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   selector: 'pm-kategoriebearbeiten',
   templateUrl: './kategorie-bearbeiten.component.html',
   styleUrls: ['./kategorie-bearbeiten.component.scss']
+
 })
-export class KategorieBearbeitenComponent {}
+
+export class KategorieBearbeitenComponent {
+
+}

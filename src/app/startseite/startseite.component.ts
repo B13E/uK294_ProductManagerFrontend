@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 
-// Schritt 1: Produktklasse definieren
 class Product {
   constructor(
     public name: string,
@@ -15,9 +14,13 @@ class Product {
   styleUrls: ['./startseite.component.scss']
 })
 export class StartseiteComponent {
-  // Schritt 2: Produkte zur Komponente hinzufügen
-  products: Product[] = [
-    new Product('Produkt 1', 19.99, 'assets/images/produkt1.jpg'),
-    new Product('Produkt 2', 29.99, 'assets/images/produkt2.jpg'),
+  smartphones: Product[] = [
+    new Product('Smartphone 3', 999.99, 'assets/images/Smartphone3.jpg')
+  ];
+  laptops: Product[] = [
+    new Product('Laptop 2', 665.99, 'assets/images/Laptop2.jpg'),
+  ];
+  computers: Product[] = [
+    new Product('Computer 1', 999.99, 'assets/images/Computer1.jpg'),
   ];
 }

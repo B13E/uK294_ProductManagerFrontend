@@ -1,1 +1,33 @@
-<p>kategorie-bearbeiten works! AB 6.2</p>
+<div class="Titel">
+    <p>Kategorie bearbeiten</p>
+</div>
+
+<div class="container">
+    <form>
+        <mat-card>
+            <mat-card-content>
+                <!--ID-->
+                <div class="row">
+                    <mat-form-field class="col">
+                        <mat-label>ID</mat-label>
+                        <input matInput required>
+                    </mat-form-field>
+                    <mat-form-field class="col">
+                        <mat-label>Aktiv</mat-label>
+                        <input matInput required>
+                    </mat-form-field>
+                </div>
+                <!--Name-->
+                <div class="row">
+                    <mat-form-field class="col">
+                        <mat-label>Name</mat-label>
+                        <input matInput required>
+                    </mat-form-field>
+                </div>
+                <div class="row">
+                    <button mat-raised-button color="primary" type="submit">Speichern</button>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </form>
+</div>
