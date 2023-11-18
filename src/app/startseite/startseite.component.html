@@ -1,17 +1,23 @@
 <div class="homepage">
+  <!-- Willkommensbereich -->
   <div class="welcome">
     <h1>Willkommen auf unserer Website!</h1>
     <p>Entdecken Sie die neuesten Angebote und Produkte.</p>
   </div>
+
+  <!-- Bereich für Neuigkeiten -->
   <div class="news">
     <h2>Neuigkeiten</h2>
     <div class="news-item">
       <h3>Neue Produkte eingetroffen</h3>
       <p>Wir haben brandneue Smartphones, Laptops und Computer im Sortiment.</p>
     </div>
+
+    <!-- Bereich für spezielle Angebote -->
     <div class="featured">
       <h2>Spezielle Angebote</h2>
       <div class="product-container">
+        <!-- Schleife für Smartphones -->
         <div class="product" *ngFor="let product of smartphones">
           <img [src]="product.imageUrl" [alt]="product.name">
           <div class="product-details">
@@ -19,6 +25,8 @@
             <p>Preis: {{ product.price }} CHF</p>
           </div>
         </div>
+
+        <!-- Schleife für Laptops -->
         <div class="product" *ngFor="let product of laptops">
           <img [src]="product.imageUrl" [alt]="product.name">
           <div class="product-details">
@@ -26,6 +34,8 @@
             <p>Preis: {{ product.price }} CHF</p>
           </div>
         </div>
+
+        <!-- Schleife für Computer -->
         <div class="product" *ngFor="let product of computers">
           <img [src]="product.imageUrl" [alt]="product.name">
           <div class="product-details">
@@ -35,6 +45,8 @@
         </div>
       </div>
     </div>
+
+    <!-- Bereich für Werbung und Rabattaktion -->
     <div class="advertisement">
       <h2>Rabattaktion</h2>
       <div class="discount-offer">

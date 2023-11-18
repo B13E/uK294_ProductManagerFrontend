@@ -5,16 +5,18 @@ describe('HeaderComponent', () => {
   let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
 
+  // Konfigurieren und Vorbereiten der Testumgebung vor jedem Testfall
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HeaderComponent]
+      declarations: [HeaderComponent], // Deklariere die zu testende Komponente
     });
-    fixture = TestBed.createComponent(HeaderComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    fixture = TestBed.createComponent(HeaderComponent); // Erstelle eine Komponenteninstanz
+    component = fixture.componentInstance; // Greife auf die Komponenteninstanz zu
+    fixture.detectChanges(); // Aktualisiere die Komponentenansicht
   });
 
+  // Überprüfe, ob die Komponente erfolgreich erstellt wurde
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(component).toBeTruthy(); // Die Komponente sollte erfolgreich erstellt worden sein
   });
 });

@@ -1,9 +1,10 @@
 <mat-toolbar color="primary">
-  <button mat-icon-button [matMenuTriggerFor]="mainMenu" class="example-icon" aria-label="Example icon-button with menu icon">
+  <!-- Menü-Button mit Icon -->
+  <button mat-icon-button [matMenuTriggerFor]="mainMenu" class="example-icon" aria-label="Menü öffnen">
     <mat-icon>menu</mat-icon>
   </button>
 
-  <!--Menü-->
+  <!-- Hauptmenü -->
   <mat-menu #mainMenu="matMenu">
     <button mat-menu-item routerLink="/kategoriedetails">Kategoriedetails</button>
     <button mat-menu-item routerLink="/kategorieliste">Kategorieliste</button>
@@ -11,33 +12,34 @@
     <button mat-menu-item routerLink="/produktliste">Produktliste</button>
   </mat-menu>
 
+  <!-- Titel der Anwendung -->
   <span>Product Manager Frontend</span>
   <span class="example-spacer"></span>
 
-  <!--Kategorien-->
+  <!-- Kategorien-Button (nur für Admins) -->
   <button *pmShowAsAdmin (click)="onpageshow" mat-button [matMenuTriggerFor]="categoriesMenu">Kategorie</button>
 
+  <!-- Kategorienmenü -->
   <mat-menu #categoriesMenu="matMenu">
     <button mat-menu-item routerLink="/admin/kategorieerstellen">Kategorie erstellen</button>
     <button mat-menu-item routerLink="/admin/kategoriebearbeiten">Kategorie bearbeiten</button>
     <button mat-menu-item routerLink="/admin/kategorieentfernen">Kategorie entfernen</button>
   </mat-menu>
 
-  <!--Produkte-->
+  <!-- Produkte-Button (nur für Admins) -->
   <button *pmShowAsAdmin (click)="onpageshow" mat-button [matMenuTriggerFor]="productsMenu">Produkte</button>
 
+  <!-- Produkte-Menü -->
   <mat-menu #productsMenu="matMenu">
     <button mat-menu-item routerLink="/admin/produkterstellen">Produkt erstellen</button>
     <button mat-menu-item routerLink="/admin/produktbearbeiten">Produkt bearbeiten</button>
     <button mat-menu-item routerLink="/admin/produktentfernen">Produkt entfernen</button>
   </mat-menu>
 
-  <!-- Login/Logout Button -->
+  <!-- Login/Logout Button je nach Benutzerstatus -->
   <button mat-button *ngIf="!isLoggedIn()" routerLink="/auth/login">Login</button>
   <button mat-button *ngIf="isLoggedIn()" (click)="logout()">Logout</button>
 
-  <!-- Registrieren Button -->
+  <!-- Registrieren Button (nur für nicht eingeloggte Benutzer) -->
   <button mat-button *ngIf="!isLoggedIn()" routerLink="/auth/register">Registrieren</button>
-
-
 </mat-toolbar>

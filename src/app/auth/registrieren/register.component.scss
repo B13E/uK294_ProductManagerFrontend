@@ -1,30 +1,35 @@
+/* Stil für den Titelbereich, verwendet Flexbox für eine zentrierte Ausrichtung. */
 .Titel {
   display: flex;
-  justify-content: center;
+  justify-content: center; /* Zentriert den Inhalt horizontal. */
   align-items: center;
   font-size: 24px;
   font-weight: bold;
   margin-top: 10px;
 }
 
+/* Stil für den Hauptcontainer, der das Formular oder die Inhaltsbereiche umschliesst. */
 .container {
   display: flex;
-  justify-content: center;
+  justify-content: center; /* Zentriert den Containerinhalt horizontal. */
   align-items: center;
   margin-bottom: 10px;
 }
 
+/* Stil für Reihen in einem Formular oder Layout, verteilt Kinder-Elemente gleichmässig. */
 .row {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Verteilt die Elemente gleichmässig. */
   align-items: center;
   margin-bottom: 1px;
 }
 
+/* Stil für Spalten innerhalb einer Reihe, angewendet auf form-field oder ähnliche Elemente. */
 .row .col {
   margin-right: 5px;
 }
 
+/* Stil für Fehlermeldungen, meistens genutzt in Kombination mit Angular Material Formular-Validierung. */
 mat-error {
-  color: #f44336; /* Rot für Fehlermeldungen */
+  color: #f44336; /* Rot, um Fehler hervorzuheben. */
 }

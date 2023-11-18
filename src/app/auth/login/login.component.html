@@ -1,36 +1,42 @@
+<!-- Titelbereich des Login-Formulars -->
+<!-- Der Titel 'Anmelden' wird zentriert im oberen Bereich des Formulars dargestellt. -->
 <div class="Titel">
   <p>Anmelden</p>
 </div>
 
+<!-- Hauptcontainer des Login-Formulars -->
+<!-- Dieser Container umschließt das gesamte Login-Formular. -->
 <div class="container">
-    <form [formGroup]="loginForm" (ngSubmit)="logForm()" class="example-form">
+  <!-- Das Formular ist an das loginForm-Objekt gebunden und ruft die logForm()-Methode beim Absenden auf. -->
+  <form [formGroup]="loginForm" (ngSubmit)="logForm()" class="example-form">
 
-      <mat-card-header>
+    <!-- E-Mail-Eingabefeld -->
+    <!-- Verwendet Angular Material Design für die Gestaltung und reaktive Formularsteuerung für dynamische Interaktionen. -->
+    <mat-form-field class="example-full-width">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email">
+      <!-- Fehlermeldung wird angezeigt, wenn das E-Mail-Feld ungültig und interagiert wurde. -->
+      <mat-error *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)">
+        {{ getEmailErrorMessage() }}
+      </mat-error>
+    </mat-form-field>
 
-      </mat-card-header>
+    <!-- Passwort-Eingabefeld -->
+    <!-- Ähnlich wie das E-Mail-Feld, aber für das Passwort. Nutzt ebenfalls Angular Material Design und reaktive Formularsteuerung. -->
+    <mat-form-field appearance="fill" class="example-full-width password-field">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" formControlName="password">
+      <!-- Dynamische Fehlermeldung wird angezeigt, wenn das Passwortfeld ungültig und interagiert wurde. -->
+      <mat-error *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)">
+        {{ getPasswordErrorMessage() }}
+      </mat-error>
+    </mat-form-field>
 
-      <!--E-Mail-->
-      <mat-form-field class="example-full-width">
-        <mat-label>Email</mat-label>
-        <input matInput formControlName="email">
-        <mat-error *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)">
-          {{ getEmailErrorMessage() }}
-        </mat-error>
-      </mat-form-field>
-
-      <!--Passwort-->
-      <mat-form-field appearance="fill" class="example-full-width password-field">
-        <mat-label>Password</mat-label>
-        <input matInput type="password" formControlName="password">
-        <mat-error *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)">
-          {{ getPasswordErrorMessage() }}
-        </mat-error>
-      </mat-form-field>
-
-      <!--Login und Registrierung-->
-      <div class="button-row">
-        <button mat-raised-button color="primary" type="submit">Login</button>
-        <button mat-button mat-raised-button color="accent" [routerLink]="['/auth/register']">Registrieren</button>
-      </div>
-    </form>
-  </div>
+    <!-- Schaltflächen für Login und Registrierung -->
+    <!-- Bietet dem Benutzer die Möglichkeit, sich anzumelden oder zur Registrierungsseite zu navigieren. -->
+    <div class="button-row">
+      <button mat-raised-button color="primary" type="submit">Login</button>
+      <button mat-button mat-raised-button color="accent" [routerLink]="['/auth/register']">Registrieren</button>
+    </div>
+  </form>
+</div>

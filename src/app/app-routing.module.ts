@@ -19,6 +19,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { AdminAuthGuard } from './benutzerverwaltung/admin-auth.guard';
 import { AdminComponent } from "./benutzerverwaltung/admin/admin.component";
 import {BenutzerComponent} from "./benutzerverwaltung/benutzer/benutzer.component";
+import { APIS } from "./openapi-client/api/api";
+import { UserControllerService } from "./openapi-client/api/userController.service";
 
 const routes: Routes = [
   { path: '', redirectTo: 'startseite', pathMatch: 'full' },

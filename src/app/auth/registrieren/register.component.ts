@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
@@ -8,16 +8,17 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
-import {RegisterDto, UserControllerService} from "../../openapi-client";
-import {MatCheckboxModule} from "@angular/material/checkbox";
+import { RegisterDto, UserControllerService } from "../../openapi-client";
+import { MatCheckboxModule } from "@angular/material/checkbox";
 import { Router } from '@angular/router';
 
-
+// Deklaration der RegisterComponent mit ihren Abhängigkeiten und Styles
 @Component({
   selector: 'pm-registrieren',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
-  imports: [ReactiveFormsModule,
+  imports: [
+    ReactiveFormsModule,
     CommonModule,
     MatToolbarModule,
     MatIconModule,
@@ -26,24 +27,20 @@ import { Router } from '@angular/router';
     MatFormFieldModule,
     MatInputModule,
     MatCardModule,
-    MatInputModule,
-    MatButtonModule, MatCheckboxModule,
+    MatCheckboxModule
   ],
   standalone: true
 })
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
 
-  // submit()
-  // formgroup.value as RegisterDTO).register
-  // Testanmeldung Registrierung 1 DB und nur ein Benutzer möglich
-
-// Für Formular aus swagger kopieren
-//  private router: any;
-  constructor(private fb: FormBuilder, private userService: UserControllerService, private router: Router) { // FormBuilder - Methode Group für Controlls
+  constructor(
+    private fb: FormBuilder,
+    private userService: UserControllerService,
+    private router: Router
+  ) {
+    // Initialisiert das Registrierungsformular mit Validierungsregeln
     this.registerForm = this.fb.group({
-      //namen aus api verwenden
-      // anrede: ['', Validators.required],
       firstName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(255)]],
       lastName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(255)]],
       street: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(255)]],
@@ -58,30 +55,27 @@ export class RegisterComponent implements OnInit {
         Validators.minLength(8),
         Validators.pattern('^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$')]],
       confirmPassword: [''],
-    //  agb: [false, Validators.requiredTrue],
-    //  newsletter: [false]
     });
   }
 
   ngOnInit(): void {
+    // Periodisches Logging des Formularstatus zur Überwachung (nur zu Entwicklungs-/Debugging-Zwecken)
     setInterval(() => {
       console.log(this.registerForm);
     }, 1500);
   }
 
-  logForm() {
-  }
-
+  // Funktion zur Handhabung des Formularabsendens
   onSubmit(): void {
     if (this.registerForm.valid) {
       this.userService.register(this.registerForm.value as RegisterDto).subscribe(val => {
         alert("erfolgreich registriert");
-        this.router.navigateByUrl('/auth/login'); //-> Navigieren auf http://localhost:4200/auth/login
+        this.router.navigateByUrl('/auth/login'); // Navigiert zur Login-Seite nach erfolgreicher Registrierung
       });
     }
   }
 
-  // In RegisterComponent.ts
+  // Funktion zur Generierung von Fehlermeldungen basierend auf dem Formularstatus
   getErrorMessage(field: string): string {
     const control = this.registerForm.get(field);
 
@@ -100,13 +94,4 @@ export class RegisterComponent implements OnInit {
     }
     return '';
   }
-
 }
-/*
-  onRegister() {
-    if (this.registerForm.valid) {
-      // https://product-manager.cyrotech.ch/});
-      console.log(this.registerForm.value);
-    }
-  }
-*/

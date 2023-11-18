@@ -1,3 +1,14 @@
+<!-- Titel der Benutzerverwaltung -->
+<h2>Benutzerverwaltung</h2>
 
-<p>Authentifizierte Benutzer mit Administrationsrechten können andere Benutzer zum
-  Administrator befördern</p>
+<!-- Liste aller Benutzer. Für jeden Benutzer wird ein Listenelement erstellt -->
+<ul>
+  <!-- ngFor Direktive zum Iterieren über die Benutzerliste -->
+  <li *ngFor="let user of users">
+    <!-- Anzeige des Benutzernamens -->
+    {{ user.name }}
+
+    <!-- Button zum Befördern des Benutzers zum Admin. Wird nur angezeigt, wenn der Benutzer kein Admin ist -->
+    <button (click)="promoteToAdmin(user)" *ngIf="!user.isAdmin">Zum Admin befördern</button>
+  </li>
+</ul>

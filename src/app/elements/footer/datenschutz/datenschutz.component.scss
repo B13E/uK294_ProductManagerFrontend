@@ -1,8 +1,10 @@
+/* Stil für den übergeordneten Container der rechtlichen Dokumente */
 .legal-document {
   text-align: center;
   max-width: 600px;
   margin: 0 auto;
 
+  /* Stil für Überschriften erster Ordnung */
   h1 {
     font-size: 24px;
     font-weight: bold;
@@ -10,10 +12,12 @@
     margin-bottom: 10px;
   }
 
+  /* Stil für Überschriften dritter Ordnung */
   h3 {
     font-weight: bold;
   }
 
+  /* Stil für Absätze */
   p {
     font-size: 16px;
     margin-bottom: 10px;

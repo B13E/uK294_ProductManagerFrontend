@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+// Definition einer Produktklasse für die Produktinformationen
 class Product {
   constructor(
     public name: string,
@@ -14,6 +15,7 @@ class Product {
   styleUrls: ['./kategorieliste.component.scss']
 })
 export class KategorielisteComponent {
+  // Arrays für verschiedene Produktkategorien mit Beispieldaten
   smartphones: Product[] = [
     new Product('Smartphone 1', 299.99, 'assets/images/Smartphone1.jpg'),
     new Product('Smartphone 2', 599.99, 'assets/images/Smartphone2.jpg'),
@@ -32,11 +34,12 @@ export class KategorielisteComponent {
     new Product('Computer 3', 4321.99, 'assets/images/Computer3.jpg')
   ];
 
-  // Zustandsvariablen für die Anzeige der Dropdowns
+  // Zustandsvariablen für die Anzeige der Dropdowns für verschiedene Kategorien
   showSmartphones: boolean = false;
   showLaptops: boolean = false;
   showComputers: boolean = false;
 
+  // Methode zum Umschalten der Anzeige der Dropdowns basierend auf der ausgewählten Kategorie
   toggleDropdown(category: string) {
     switch (category) {
       case 'smartphones':

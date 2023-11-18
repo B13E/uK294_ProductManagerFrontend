@@ -1,16 +1,16 @@
+<!-- Titelbereich des Registrierungsformulars -->
 <div class="Titel">
   <p>Registrieren</p>
 </div>
 
+<!-- Hauptcontainer für das Registrierungsformular -->
 <div class="container">
   <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
     <mat-card>
 
       <mat-card-content>
 
-        <!--Name-->
-        <!--Name-->
-        <!--Name-->
+        <!-- Abschnitt für die Eingabe von Name und Nachname -->
         <div class="row">
           <mat-form-field class="col">
             <mat-label>Vorname</mat-label>
@@ -28,13 +28,10 @@
           </mat-form-field>
         </div>
 
-
-
-        <!--Address-->
+        <!-- Abschnitt für die Adresse -->
         <div class="row">
           <p>Adresse</p>
         </div>
-
         <mat-form-field>
           <mat-label>Strasse</mat-label>
           <input matInput formControlName="street" required>
@@ -43,6 +40,7 @@
           </mat-error>
         </mat-form-field>
 
+        <!-- PLZ und Stadt -->
         <div class="row">
           <mat-form-field class="col">
             <mat-label>PLZ</mat-label>
@@ -60,6 +58,7 @@
           </mat-form-field>
         </div>
 
+        <!-- Land -->
         <mat-form-field>
           <mat-label>Land</mat-label>
           <input matInput formControlName="country" required>
@@ -68,11 +67,10 @@
           </mat-error>
         </mat-form-field>
 
-        <!--Kontaktnummer-->
+        <!-- Abschnitt für die Kontaktnummer -->
         <div class="row with-margin">
           <p>Kontaktnummer</p>
         </div>
-
         <div class="row">
           <mat-form-field class="col">
             <mat-label>Telefon</mat-label>
@@ -90,11 +88,10 @@
           </mat-form-field>
         </div>
 
-        <!--Login-->
+        <!-- Abschnitt für Login-Informationen -->
         <div class="row">
           <p>Login</p>
         </div>
-
         <div class="row">
           <mat-form-field class="col">
             <mat-label>E-Mail</mat-label>
@@ -113,7 +110,7 @@
           </mat-form-field>
         </div>
 
-        <!--AGB und Datenschutz-->
+        <!-- AGB und Datenschutzerklärung -->
         <div class="row">
           <mat-checkbox class="col">
             <label>
@@ -124,7 +121,7 @@
           </mat-checkbox>
         </div>
 
-        <!--Registrieren-->
+        <!-- Button zum Absenden des Formulars -->
         <div class="row">
           <button mat-raised-button color="primary" type="submit" [disabled]="registerForm.invalid">Registrieren</button>
         </div>

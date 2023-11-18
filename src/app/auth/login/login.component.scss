@@ -1,3 +1,4 @@
+/* Stil für den Titelbereich, verwendet Flexbox für eine zentrierte Ausrichtung und setzt die Schriftgröße sowie -gewicht */
 .Titel {
   display: flex;
   justify-content: center;
@@ -7,20 +8,22 @@
   margin-top: 10px;
 }
 
+/* Flex-Container für den Hauptbereich des Formulars, zentriert die Inhalte */
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* Stil für das Formular, ordnet die Formularelemente in einer Spalte an */
 .example-form {
   display: flex;
   flex-direction: column;
 }
 
+/* Stil für die Schaltflächenzeile, verteilt die Schaltflächen mit einem Abstand dazwischen */
 .button-row {
   display: flex;
   justify-content: space-between;
   margin-top: 16px;
 }
-

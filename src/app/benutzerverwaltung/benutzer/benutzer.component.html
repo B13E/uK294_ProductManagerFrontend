@@ -1,16 +1,5 @@
-<p>benutzer works!</p>
-
-<p>Benutzer auflisten</p>
-
-<p>UserShowDto User anzeigen
-  id	[...]
-  firstName	[...]
-  lastName	[...]
-  street	[...]
-  zip	[...]
-  city	[...]
-  country	[...]
-  phone	[...]
-  mobilePhone	[...]
-  email	[...]
-  </p>
+<h2>Benutzerprofil</h2>
+<!-- Prüft, ob ein Benutzerobjekt vorhanden ist, bevor es im Template dargestellt wird -->
+<div *ngIf="user">
+  <!-- <p>Name: {{ user.name }}</p> Fügen Sie hier weitere Benutzerdetails ein -->
+</div>
